@@ -1,0 +1,33 @@
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+
+    <div class="modal-body">
+        <form [formGroup]="queryForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" class="form-control" formControlName="name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" formControlName="email">
+            </div>
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea class="form-control" name="content" rows=3></textarea>
+            </div>
+
+            <button type="button" class="btn btn-outline-dark">Send</button>
+
+        </form>
+    </div>
+
+</ng-template>
+<div>
+    <p style="color: #fff;">Do you have any query?</p>
+    <button class="btn btn-info btn-lg" (click)="sendQuery(content)">Mail query</button>
+</div>>
