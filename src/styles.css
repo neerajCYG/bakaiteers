@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+.carousel-indicators {
+    margin-bottom: -53px !important;
+}
+
+.carousel-control-prev {
+    margin-left: -39px !important;
+}
+
+.carousel-control-next {
+    margin-right: -39px !important;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2% !important;
+    text-align: center;
+    opacity: 0.7 !important;
+    transition: opacity 0.15s ease;
+}
