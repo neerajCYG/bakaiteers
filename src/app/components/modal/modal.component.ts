@@ -34,7 +34,7 @@ export class ModalComponent implements OnInit {
   onSubmit(value){
 
     this.messageDelivered=true;
-    this.http.post("http://localhost:3000/send", value).subscribe(res=>{
+    this.http.post("https://e7a0785306d2.ngrok.io/send", value).subscribe(res=>{
       if(res){
         this.message="Message sent successfully"
       }
