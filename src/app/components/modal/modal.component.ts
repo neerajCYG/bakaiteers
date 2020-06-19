@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { NgbActiveModal, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-modal',
@@ -8,8 +9,10 @@ import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent implements OnInit {
+  message=null;
+  messageDelivered=false;
   queryForm:FormGroup
-  constructor(config: NgbModalConfig, private modalService: NgbModal) { }
+  constructor(config: NgbModalConfig, private modalService: NgbModal, private http:HttpClient) { }
 
   ngOnInit(): void {
 
@@ -23,13 +26,23 @@ export class ModalComponent implements OnInit {
   }
 
   sendQuery(content){
-
+    this.messageDelivered=false;
+    this.queryForm.reset();
     this.modalService.open(content);
   }
 
-  onSubmit(){
-    console.log(this.queryForm)
+  onSubmit(value){
 
+    this.messageDelivered=true;
+    this.http.post("http://localhost:3000/send", value).subscribe(res=>{
+      if(res){
+        this.message="Message sent successfully"
+      }
+    },error=>{
+      this.message="Something went wrong. Please try again later"
+
+      }
+    )
   }
 
 }

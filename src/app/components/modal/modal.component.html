@@ -1,33 +1,51 @@
 <ng-template #content let-c="close" let-d="dismiss">
-    <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
-        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+    <form [formGroup]="queryForm" (ngSubmit)="onSubmit(queryForm.value)">
+
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Hi There!</h4>
+
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
-    </div>
 
-    <div class="modal-body">
-        <form [formGroup]="queryForm" (ngSubmit)="onSubmit()">
+        </div>
+
+        <p *ngIf="messageDelivered" style="font-size: 1.1rem;
+        margin-left: 18px;">{{message}}</p>
+        <div class="modal-body">
             <div class="form-group">
-                <label for="name">Name</label>
+                <label for="name">Name <span style="color: red;">*</span></label>
                 <input type="text" id="name" class="form-control" formControlName="name">
+                <!-- <span *ngIf="!queryForm.get('username').valid && queryForm.get('username').touched" class="help-block">
+                  <span *ngIf="queryForm.get('username')">This name is invalid</span>
+                <span *ngIf="queryForm.get('username').errors['required']">This
+                    field is required!</span>
+                </span> -->
+                <span *ngIf="!queryForm.get('name').valid && queryForm.get('name').touched" style="color:red">This
+                  field is required!</span>
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email">Email <span style="color: red;">*</span></label>
                 <input type="email" id="email" class="form-control" formControlName="email">
+                <span *ngIf="!queryForm.get('email').valid && queryForm.get('email').touched" style="color:red">This
+                  field is required!</span>
             </div>
             <div class="form-group">
                 <label for="content">Content</label>
-                <textarea class="form-control" name="content" rows=3></textarea>
+                <textarea class="form-control" formControlName="content" rows=3></textarea>
+
+            </div>
+            <div class="row" style="text-align: end;">
+                <div class="col-sm-12">
+                    <button style="width: 25%" class="btn btn-outline-dark" [disabled]="!queryForm.valid">Send</button>
+
+                </div>
             </div>
 
-            <button type="button" class="btn btn-outline-dark">Send</button>
-
-        </form>
-    </div>
-
+        </div>
+    </form>
 </ng-template>
 <div>
     <p style="color: #fff;">Do you have any query?</p>
-    <button class="btn btn-info btn-lg" (click)="sendQuery(content)">Mail query</button>
-</div>>
+    <button class="btn btn-info btn-md" (click)="sendQuery(content)">Mail query</button>
+</div>

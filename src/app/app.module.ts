@@ -10,6 +10,8 @@ import { MainComponent } from './components/main/main.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './components/modal/modal.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AboutPageComponent } from './components/about-page/about-page.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,16 @@ import { ModalComponent } from './components/modal/modal.component';
     HomeComponent,
     MainComponent,
     BlogsComponent,
-    ModalComponent
+    ModalComponent,
+    AboutPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

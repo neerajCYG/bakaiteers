@@ -1,5 +1,6 @@
 .footer {
-    background-color: #343a40 !important
+    background-color: #343a40 !important;
+    height: 100% !important;
 }
 
 a {
@@ -8,4 +9,8 @@ a {
 
 .font-weight-bold.mt-3.mb-4 {
     color: #fff;
+}
+
+.text-center {
+    margin-top: -12px;
 }

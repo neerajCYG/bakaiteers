@@ -21,6 +21,11 @@
     justify-content: center;
     width: 2% !important;
     text-align: center;
-    opacity: 0.7 !important;
+    opacity: 0.4 !important;
     transition: opacity 0.15s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1 !important;
 }
