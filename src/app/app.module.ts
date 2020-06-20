@@ -12,7 +12,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './components/modal/modal.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AboutPageComponent } from './components/about-page/about-page.component';
-
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +30,9 @@ import { AboutPageComponent } from './components/about-page/about-page.component
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbCollapseModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
