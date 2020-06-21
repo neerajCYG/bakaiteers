@@ -29,3 +29,27 @@
 .carousel-control-next:hover {
     opacity: 1 !important;
 }
+
+.slide>.carousel-inner>.carousel-item>img {
+    height: 500px !important;
+    width: 100% !important;
+}
+
+@media screen and (max-width:812px) {
+    .slide>.carousel-inner>.carousel-item>img {
+        height: 300px !important;
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width:812px) {
+    .carousel-control-next {
+        margin-right: 0px !important;
+    }
+}
+
+@media screen and (max-width:812px) {
+    .carousel-control-prev {
+        margin-left: 0px !important;
+    }
+}

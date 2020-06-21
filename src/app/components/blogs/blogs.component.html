@@ -1,51 +1,12 @@
 <div class="container">
-    <div class="row" style="margin-right: -32px;
-    margin-left: -30px;">
-        <div class="col-md-3">
+    <div class="row" style="margin-right: -32px;margin-left: -30px;">
+        <div class="col-md-3" *ngFor="let blog of blogs">
             <div class="card">
-                <img class="card-img-top" src="assets/images/Thumbnail.png" alt="Card image cap">
+                <img class="card-img-top" src="{{blog.image}}" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Work From Home</h5>
-                    <p class="card-text"></p>
-                    <a href="https://www.youtube.com/watch?v=P9aoqhUSoGQ&t=2s" target="_blank" class="btn btn-info btn-md">Watch Video</a>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <img class="card-img-top" src="assets/images/Thumbnail.png " alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Quarantine</h5>
-                    <p class="card-text"></p>
-                    <a href="https://www.youtube.com/watch?v=AHpAuFjP4jQ&t=1s" target="_blank" class="btn btn-info btn-md">Watch Video</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <img class="card-img-top" src="assets/images/thumbnail2.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">BakiTeers vs TikToker</h5>
-                    <p class="card-text"></p>
-                    <a href="https://www.youtube.com/watch?v=sPtNUoZUgqc" target="_blank" class="btn btn-info btn-md">Watch Video</a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col-md-3">
-            <div class="card">
-                <img class="card-img-top" src="assets/images/Thumbnail.png " alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Quarantine</h5>
-                    <p class="card-text"></p>
-                    <a href="https://www.youtube.com/watch?v=AHpAuFjP4jQ&t=1s" target="_blank" class="btn btn-info btn-md">Watch Video</a>
+                    <h5 class="card-title">{{blog.title}}</h5>
+                    <a href="{{blog.link}}" target="_blank" class="btn btn-info btn-md">Watch Video</a>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-</div>

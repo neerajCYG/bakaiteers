@@ -14,7 +14,6 @@ export class FooterComponent implements OnInit {
   }
   sendQuery(content){
     this.querySent=true;
-    console.log(this.querySent)
     this.modalService.open(content);
   }
 
