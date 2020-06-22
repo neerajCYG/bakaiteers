@@ -20,7 +20,7 @@ export class BlogsComponent implements OnInit {
       {
       'title':"Work From Home",
       'link':"https://www.youtube.com/watch?v=P9aoqhUSoGQ&t=2s",
-      'image':"assets/images/Thumbnail.png"
+      'image':"assets/images/wfh.png"
     },
     {
       'title':"Quarantine",
@@ -39,6 +39,7 @@ export class BlogsComponent implements OnInit {
     }
 
   ]
+
   }
 
 }

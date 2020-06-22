@@ -13,4 +13,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  headerLink(){
+    this.isCollapsed=true;
+  }
 }

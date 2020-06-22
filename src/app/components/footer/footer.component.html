@@ -29,11 +29,11 @@
                         <img class="firstSlide" style="width: 28px;" src="assets/images/youtube.png" alt="First slide">
                     </h5>
 
-                    <ul class="list-unstyled">
+                    <ul class="list-unstyled" *ngFor="let data of footerData['youtube']">
                         <li>
-                            <a href="https://www.youtube.com/channel/UCJtEuR-Ud8j1x_PzxAoEbHA" target="_blank">Subscribe Our Channel</a>
+                            <a href="{{data.link}}" target="_blank">{{data.title}}</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="https://www.youtube.com/watch?v=P9aoqhUSoGQ&t=2s" target="_blank">Work From Home</a>
                         </li>
                         <li>
@@ -41,7 +41,7 @@
                         </li>
                         <li>
                             <a href="https://www.youtube.com/watch?v=sPtNUoZUgqc" target="_blank">BakaiTeers vs TikToker</a>
-                        </li>
+                        </li> -->
 
                     </ul>
 
@@ -56,13 +56,13 @@
                     <!-- Links -->
                     <h5 class="font-weight-bold mt-3 mb-4">Contact</h5>
 
-                    <ul class="list-unstyled">
+                    <ul class="list-unstyled" *ngFor="let data of footerData['contact']">
                         <li>
-                            <a href="https://www.facebook.com/bakaiteers/?modal=admin_todo_tour" target="_blank">Facebook</a>
+                            <a href="{{data.link}}" target="_blank">{{data.title}}</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="https://www.instagram.com/bakaiteers/" target="_blank">Instagram</a>
-                        </li>
+                        </li> -->
 
                     </ul>
 
@@ -79,7 +79,7 @@
 
                     <ul class="list-unstyled">
                         <li>
-                            <a routerLink="about">Our Journey</a>
+                            <a routerLink="about" routerLinkActive="active">Our Journey</a>
                         </li>
                     </ul>
 
