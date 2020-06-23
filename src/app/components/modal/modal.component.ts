@@ -2,6 +2,7 @@ import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { NgbActiveModal, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { SpinnerService } from 'src/app/services/spinner.service';
 
 @Component({
   selector: 'app-modal',
@@ -12,7 +13,7 @@ export class ModalComponent implements OnInit {
   message=null;
   messageDelivered=false;
   queryForm:FormGroup
-  constructor(config: NgbModalConfig, private modalService: NgbModal, private http:HttpClient) { }
+  constructor(private spinner:SpinnerService,config: NgbModalConfig, private modalService: NgbModal, private http:HttpClient) { }
 
   ngOnInit(): void {
 
@@ -34,11 +35,15 @@ export class ModalComponent implements OnInit {
   onSubmit(value){
 
     this.messageDelivered=true;
+    this.spinner.showSpinner()
     this.http.post("https://heroku-node-bakaiteers.herokuapp.com/send", value).subscribe(res=>{
-      if(res){
+      this.spinner.hideSpinner()
+    if(res){
+
         this.message="Message sent successfully"
       }
     },error=>{
+
       this.message="Something went wrong. Please try again later"
 
       }

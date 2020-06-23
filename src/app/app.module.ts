@@ -13,6 +13,10 @@ import { ModalComponent } from './components/modal/modal.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AboutPageComponent } from './components/about-page/about-page.component';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { SanitizerPipe } from './pipes/sanitizer.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +26,8 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
     MainComponent,
     BlogsComponent,
     ModalComponent,
-    AboutPageComponent
+    AboutPageComponent,
+    SanitizerPipe
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,9 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgbCollapseModule
+    NgbCollapseModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule
 
   ],
   providers: [],
