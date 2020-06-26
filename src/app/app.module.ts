@@ -16,6 +16,7 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { SanitizerPipe } from './pipes/sanitizer.pipe';
+import { ChatbotComponent } from './components/chatbot/chatbot.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SanitizerPipe } from './pipes/sanitizer.pipe';
     BlogsComponent,
     ModalComponent,
     AboutPageComponent,
-    SanitizerPipe
+    SanitizerPipe,
+    ChatbotComponent
   ],
   imports: [
     BrowserModule,

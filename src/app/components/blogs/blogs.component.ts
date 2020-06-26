@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SpinnerService } from 'src/app/services/spinner.service';
+import { strict } from 'assert';
 
 @Component({
   selector: 'app-blogs',
@@ -9,8 +10,8 @@ import { SpinnerService } from 'src/app/services/spinner.service';
 })
 export class BlogsComponent implements OnInit {
 
-  api_key="AIzaSyCi8AR4mEeLT3b-eikwzDGlAYdWC6DZGT4"
-  youtubeId="UCJtEuR-Ud8j1x_PzxAoEbHA"
+
+
   blogs=[]
 
   data=[
@@ -21,27 +22,27 @@ export class BlogsComponent implements OnInit {
     }
   ];
   id=[]
-
-  str="https://www.youtube.com/embed/sPtNUoZUgqc"
   constructor(private http:HttpClient, private spinner:SpinnerService) { }
 
   ngOnInit(): void {
-   // this.spinner.showSpinner()
-    // this.http.get(`https://www.googleapis.com/youtube/v3/search?key=${this.api_key}&channelId=${this.youtubeId}&part=snippet,id&order=date&maxResults=20`).subscribe(res=>{
+   //this.spinner.showSpinner()
 
-    // this.spinner.hideSpinner()
-    //   this.data= res['items']
-    //   for(var i=0;i<this.data.length-1;i++){
-    //     this.blogs.push(
-    //       {
-    //         'title':this.data[i]['snippet']['title'],
-    //         "link":"https://www.youtube.com/watch?v="+this.data[i]['id']['videoId'],
-    //         "embeddedLink":"https://www.youtube.com/embed/"+this.data[i]['id']['videoId']
-    //       }
-    //     )
-    //   }
 
-    // })
+    this.http.get('http://localhost:3000/youtubeData').subscribe(res=>{
+      console.log(res)
+    //this.spinner.hideSpinner()
+   //   this.data= res['items']
+     // for(var i=0;i<this.data.length-1;i++){
+        // this.blogs.push(
+        //   {
+        //     'title':this.data[i]['snippet']['title'],
+        //     "link":"https://www.youtube.com/watch?v="+this.data[i]['id']['videoId'],
+        //     "embeddedLink":"https://www.youtube.com/embed/"+this.data[i]['id']['videoId']
+        //   }
+        // )
+     // }
+
+    })
 
     this.blogs=[
       {
