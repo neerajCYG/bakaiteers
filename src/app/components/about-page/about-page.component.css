@@ -1,0 +1,39 @@
+.shadow {
+    width: 70%;
+    background-color: #343a40;
+}
+
+@media screen and (max-width:812px) {
+    .shadow {
+        width: 100%;
+        background-color: #343a40;
+    }
+}
+
+@media screen and (max-width:812px) {
+    .row {
+        margin-left: -13px !important;
+    }
+}
+
+.row {
+    margin-left: 98px;
+}
+
+.social-network a.icoFacebook:hover {
+    background-color: #3B5998;
+}
+
+.ng-fa-icon {
+    /* cursor: pointer; */
+    padding: 10px;
+    font-size: 20px;
+}
+
+a {
+    color: rgba(0, 0, 0, 0.5) !important
+}
+
+a :hover {
+    color: black;
+}

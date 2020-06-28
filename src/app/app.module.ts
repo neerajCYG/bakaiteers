@@ -17,7 +17,10 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { SanitizerPipe } from './pipes/sanitizer.pipe';
 import { ChatbotComponent } from './components/chatbot/chatbot.component';
-
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faSquare, faCheckSquare } from '@fortawesome/free-solid-svg-icons';
+import { faSquare as farSquare, faCheckSquare as farCheckSquare } from '@fortawesome/free-regular-svg-icons';
+import { faStackOverflow, faGithub, faMedium, faFacebook, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,10 +43,17 @@ import { ChatbotComponent } from './components/chatbot/chatbot.component';
     HttpClientModule,
     NgbCollapseModule,
     NgxSpinnerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FontAwesomeModule
 
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private library: FaIconLibrary){
+    library.addIcons(faSquare, faCheckSquare, farSquare
+      , farCheckSquare, faStackOverflow, faGithub, faMedium, faFacebook, faLinkedin,faInstagram);
+  }
+
+ }
