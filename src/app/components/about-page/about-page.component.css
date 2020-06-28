@@ -45,6 +45,10 @@ a :hover {
 
 .bakaiteers img {
     width: 70%;
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+    border-top-right-radius: 13px;
+    border-top-left-radius: 13px;
 }
 
 @media screen and (max-width:812px) {
