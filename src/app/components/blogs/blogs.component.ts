@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { SpinnerService } from 'src/app/services/spinner.service';
-import { strict } from 'assert';
+import { SpinnerService } from '../../services/spinner.service';
 
 @Component({
   selector: 'app-blogs',

@@ -16,4 +16,7 @@ export class HeaderComponent implements OnInit {
   headerLink(){
     this.isCollapsed=true;
   }
+  backHome(){
+    this.router.navigate(['']);
+  }
 }

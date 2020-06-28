@@ -1,6 +1,7 @@
 <div class="container">
     <nav class="navbar fixed-top navbar-expand-lg navbar-light  bg-dark">
-        <a class="navbar-brand" href="#">Logo</a>
+        <!-- <a  href="#">Logo</a> -->
+        <img (click)="backHome()" class="navbar-brand" id="img" class="style-scope yt-img-shadow" alt="Avatar image" height="42" width="42" src="assets/images/bk3.jpg">
         <!-- <button (click)="isCollapsed = !isCollapsed" class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation"> -->
         <button class="navbar-toggler d-lg-none" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarNavDropdown" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
