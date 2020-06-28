@@ -1,37 +1,44 @@
 <!doctype html>
 <html lang="en">
-<head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-170037411-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-170037411-1');
-</script>
-<!-- Github Pages hack to allow SPA refresh without receiving 404. -->
-  <script>
-    (function () {
-      // Retrieve the URL the user was trying to access when receiving the 404.
-      var redirect = sessionStorage.redirect;
-      // Remove the URL from sessionStorage.
-      delete sessionStorage.redirect;
-      // Check if we actually need to redirect.
-      if (redirect && redirect != location.href) {
-        // We need to redirect to the URL the user was trying to access.
-        history.replaceState(null, null, redirect);
-      }
-    })();
-  </script>
-<!-- /Github Pages hack. -->
-  <meta charset="utf-8">
-  <title>Bakaiteers</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170037411-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-170037411-1');
+    </script>
+    <!-- Github Pages hack to allow SPA refresh without receiving 404. -->
+    <script>
+        (function() {
+            // Retrieve the URL the user was trying to access when receiving the 404.
+            var redirect = sessionStorage.redirect;
+            // Remove the URL from sessionStorage.
+            delete sessionStorage.redirect;
+            // Check if we actually need to redirect.
+            if (redirect && redirect != location.href) {
+                // We need to redirect to the URL the user was trying to access.
+                history.replaceState(null, null, redirect);
+            }
+        })();
+    </script>
+    <!-- /Github Pages hack. -->
+    <meta charset="utf-8">
+    <title>Bakaiteers</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="stylesheet" href="styles.bfbe320e6d873becdfc1.css"></head>
+
 <body>
-  <app-root></app-root>
-<script src="runtime-es2015.1eba213af0b233498d9d.js" type="module"></script><script src="runtime-es5.1eba213af0b233498d9d.js" nomodule defer></script><script src="polyfills-es5.2e99a6fe56296fe60f2d.js" nomodule defer></script><script src="polyfills-es2015.12dd4be351bc232e11d5.js" type="module"></script><script src="main-es2015.ebccee62733d66ac187c.js" type="module"></script><script src="main-es5.ebccee62733d66ac187c.js" nomodule defer></script></body>
+    <app-root></app-root>
+<script src="runtime-es2015.1eba213af0b233498d9d.js" type="module"></script><script src="runtime-es5.1eba213af0b233498d9d.js" nomodule defer></script><script src="polyfills-es5.2e99a6fe56296fe60f2d.js" nomodule defer></script><script src="polyfills-es2015.12dd4be351bc232e11d5.js" type="module"></script><script src="main-es2015.47cc391f80119ea18232.js" type="module"></script><script src="main-es5.47cc391f80119ea18232.js" nomodule defer></script></body>
+
 </html>
