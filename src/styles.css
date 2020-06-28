@@ -53,3 +53,15 @@
         margin-left: 0px !important;
     }
 }
+
+@media screen and (max-width:812px) {
+    .navbar-toggler {
+        background-color: white !important;
+    }
+}
+
+@media screen and (max-width:812px) {
+    .navbar-light .navbar-brand {
+        color: white !important;
+    }
+}

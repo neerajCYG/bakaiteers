@@ -28,21 +28,21 @@ export class BlogsComponent implements OnInit {
    //this.spinner.showSpinner()
 
 
-    this.http.get('http://localhost:3000/youtubeData').subscribe(res=>{
-      console.log(res)
-    //this.spinner.hideSpinner()
-   //   this.data= res['items']
-     // for(var i=0;i<this.data.length-1;i++){
-        // this.blogs.push(
-        //   {
-        //     'title':this.data[i]['snippet']['title'],
-        //     "link":"https://www.youtube.com/watch?v="+this.data[i]['id']['videoId'],
-        //     "embeddedLink":"https://www.youtube.com/embed/"+this.data[i]['id']['videoId']
-        //   }
-        // )
-     // }
+  //   this.http.get('http://localhost:3000/youtubeData').subscribe(res=>{
+  //     console.log(res)
+  //   //this.spinner.hideSpinner()
+  //  //   this.data= res['items']
+  //    // for(var i=0;i<this.data.length-1;i++){
+  //       // this.blogs.push(
+  //       //   {
+  //       //     'title':this.data[i]['snippet']['title'],
+  //       //     "link":"https://www.youtube.com/watch?v="+this.data[i]['id']['videoId'],
+  //       //     "embeddedLink":"https://www.youtube.com/embed/"+this.data[i]['id']['videoId']
+  //       //   }
+  //       // )
+  //    // }
 
-    })
+  //   })
 
     this.blogs=[
       {

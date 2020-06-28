@@ -37,3 +37,18 @@ a {
 a :hover {
     color: black;
 }
+
+
+/* .row.col-xl-12.bakaiteers img {
+
+} */
+
+.bakaiteers img {
+    width: 70%;
+}
+
+@media screen and (max-width:812px) {
+    .bakaiteers img {
+        width: 100%;
+    }
+}
