@@ -1,5 +1,6 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { NgbActiveModal, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -8,7 +9,7 @@ import { NgbActiveModal, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-boots
 })
 export class FooterComponent implements OnInit {
   querySent=false;
-  constructor(config: NgbModalConfig, private modalService: NgbModal,private ngZone: NgZone) { }
+  constructor(private router:Router,config: NgbModalConfig, private modalService: NgbModal,private ngZone: NgZone) { }
   scrolledOver=0;
   footerData={}
   ngOnInit(): void {
@@ -49,6 +50,10 @@ export class FooterComponent implements OnInit {
   sendQuery(content){
     this.querySent=true;
     this.modalService.open(content);
+  }
+
+  backHome(){
+    this.router.navigate(['']);
   }
 
 }
