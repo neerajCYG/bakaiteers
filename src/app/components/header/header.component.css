@@ -21,3 +21,7 @@
 #navbarNavDropdown ul>li:hover ul li {
     height: 36px;
 }
+
+.container {
+    scroll-behavior: smooth !important;
+}

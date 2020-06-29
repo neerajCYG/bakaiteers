@@ -38,11 +38,13 @@ export class FooterComponent implements OnInit {
       "contact": [
         {
           "link": "https://www.facebook.com/bakaiteers/?modal=admin_todo_tour",
-          "title": "Facebook"
+          "title": "Facebook",
+          "image":"assets/images/facebook.jpg"
         },
         {
           "link": "https://www.instagram.com/bakaiteers/",
-          "title": "Instagram"
+          "title": "Instagram",
+          "image":""
         }
       ]
     }

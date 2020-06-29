@@ -50,7 +50,9 @@
 
                     <ul class="list-unstyled" *ngFor="let data of footerData['contact']">
                         <li>
-                            <a href="{{data.link}}" target="_blank">{{data.title}}</a>
+                            <a href="{{data.link}}" target="_blank">{{data.title}}
+                              <img src="{{data.image}}" width="28px" >
+                            </a>
                         </li>
                     </ul>
                 </div>

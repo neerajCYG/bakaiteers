@@ -21,6 +21,9 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 import { faSquare, faCheckSquare } from '@fortawesome/free-solid-svg-icons';
 import { faSquare as farSquare, faCheckSquare as farCheckSquare } from '@fortawesome/free-regular-svg-icons';
 import { faStackOverflow, faGithub, faMedium, faFacebook, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { AngularChatBotComponent } from './components/angular-chat-bot/angular-chat-bot.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,8 @@ import { faStackOverflow, faGithub, faMedium, faFacebook, faLinkedin, faInstagra
     ModalComponent,
     AboutPageComponent,
     SanitizerPipe,
-    ChatbotComponent
+    ChatbotComponent,
+    AngularChatBotComponent
   ],
   imports: [
     BrowserModule,

@@ -11,12 +11,14 @@ export class HeaderComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit(): void {
+    console.log(document.documentElement.scrollTop)
   }
 
   headerLink(){
     this.isCollapsed=true;
   }
   backHome(){
+    document.documentElement.scrollTop=0
     this.router.navigate(['']);
   }
 }
