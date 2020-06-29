@@ -9,16 +9,20 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   public isCollapsed = true;
   constructor(private router:Router) { }
-
+  timer=1
   ngOnInit(): void {
-    console.log(document.documentElement.scrollTop)
   }
 
   headerLink(){
     this.isCollapsed=true;
   }
   backHome(){
-    document.documentElement.scrollTop=0
+    var refreshId = setInterval(function() {
+      document.documentElement.scrollTop=document.documentElement.scrollTop - 30;
+      if (document.documentElement.scrollTop<= 0) {
+        clearInterval(refreshId);
+      }
+    }, 1);
     this.router.navigate(['']);
   }
 }
