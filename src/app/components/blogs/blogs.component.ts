@@ -63,6 +63,11 @@ export class BlogsComponent implements OnInit {
         'title':"BakaiTeers vs TikToker",
         "link":"https://www.youtube.com/watch?v=sPtNUoZUgqc",
         "embeddedLink":"https://www.youtube.com/embed/sPtNUoZUgqc"
+      },
+      {
+        'title':"BakaiTeers | Horror Hungama",
+        "link":"https://www.youtube.com/watch?v=0MxLtB5dWug",
+        "embeddedLink":"https://www.youtube.com/embed/0MxLtB5dWug"
       }
 
     ]
