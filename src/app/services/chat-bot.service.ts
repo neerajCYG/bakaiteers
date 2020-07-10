@@ -9,8 +9,7 @@ export class ChatBotService {
   constructor(private http:HttpClient) { }
 
   getMessageOutput(inputText:string){
-    console.log("I am here", inputText)
-    console.log(this.url+inputText)
+
     return this.http.get(this.url+inputText)
   }
 }
