@@ -11,7 +11,7 @@ export class BlogsComponent implements OnInit {
 
 
 
-  blogs=[]
+  blogs=null;
 
   data=[
     {
@@ -43,34 +43,38 @@ export class BlogsComponent implements OnInit {
 
   //   })
 
-    this.blogs=[
-      {
-        'title':"BakaiTeers | Work From Home",
-        "link":"https://www.youtube.com/watch?v=P9aoqhUSoGQ",
-        "embeddedLink":"https://www.youtube.com/embed/P9aoqhUSoGQ"
-      },
-      {
-        'title':"BakaiTeers- Breaking News | Coming Soon",
-        "link":"https://www.youtube.com/watch?v=QylD2UVQbds",
-        "embeddedLink":"https://www.youtube.com/embed/QylD2UVQbds"
-      },
-      {
-        'title':"BakaiTeers | Quarantine",
-        "link":"https://www.youtube.com/watch?v=AHpAuFjP4jQ",
-        "embeddedLink":"https://www.youtube.com/embed/AHpAuFjP4jQ"
-      },
-      {
-        'title':"BakaiTeers vs TikToker",
-        "link":"https://www.youtube.com/watch?v=sPtNUoZUgqc",
-        "embeddedLink":"https://www.youtube.com/embed/sPtNUoZUgqc"
-      },
-      {
-        'title':"BakaiTeers | Horror Hungama",
-        "link":"https://www.youtube.com/watch?v=0MxLtB5dWug",
-        "embeddedLink":"https://www.youtube.com/embed/0MxLtB5dWug"
-      }
+    this.blogs= {
+      "videoPart1":[
+        {
+          'title':"BakaiTeers | Work From Home",
+          "link":"https://www.youtube.com/watch?v=P9aoqhUSoGQ",
+          "embeddedLink":"https://www.youtube.com/embed/P9aoqhUSoGQ"
+        },
+        {
+          'title':"BakaiTeers- Breaking News | Coming Soon",
+          "link":"https://www.youtube.com/watch?v=QylD2UVQbds",
+          "embeddedLink":"https://www.youtube.com/embed/QylD2UVQbds"
+        },
+        {
+          'title':"BakaiTeers | Quarantine",
+          "link":"https://www.youtube.com/watch?v=AHpAuFjP4jQ",
+          "embeddedLink":"https://www.youtube.com/embed/AHpAuFjP4jQ"
+        },
+        {
+          'title':"BakaiTeers vs TikToker",
+          "link":"https://www.youtube.com/watch?v=sPtNUoZUgqc",
+          "embeddedLink":"https://www.youtube.com/embed/sPtNUoZUgqc"
+        }
+      ],
+      "videoPart2":[
+        {
+          'title':"BakaiTeers | Horror Hungama",
+          "link":"https://www.youtube.com/watch?v=0MxLtB5dWug",
+          "embeddedLink":"https://www.youtube.com/embed/0MxLtB5dWug"
+        }
 
-    ]
+      ]
+    }
   }
 
 }

@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row blogs">
-        <div class="col-md-3 cards" *ngFor="let blog of blogs;let i=index">
-            <div class="card" *ngIf="i<=3">
+        <div class="col-md-3 cards" *ngFor="let blog of blogs['videoPart1']">
+            <div class="card">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="frame">
@@ -27,33 +27,32 @@
             </div>
         </div>
     </div>
+    <!-- <br/> -->
+    <div>
+        <div class="row blogs videoPart2">
+            <div class="col-md-3 cards" *ngFor="let blog of blogs['videoPart2']">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="frame">
+                                <!-- <img class="card-img-top" src="" alt="Card image cap"> -->
+                                <iframe width="250" height="215" [src]="blog.embeddedLink | sanitizer" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-    <br/>
-
-
-    <div class="row blogs">
-        <div class="col-md-3 cards" *ngFor="let blog of blogs;let i=index">
-            <div class="card" *ngIf="i>=4 && i<=7">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="frame">
-                            <!-- <img class="card-img-top" src="" alt="Card image cap"> -->
-                            <iframe width="250" height="215" [src]="blog.embeddedLink | sanitizer" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
+                    <div class="row">
 
-                    <div class="col-sm-12">
-                        <div class="card-body">
-                            <h5 class="card-title">{{blog.title}}</h5>
+                        <div class="col-sm-12">
+                            <div class="card-body">
+                                <h5 class="card-title">{{blog.title}}</h5>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <a href="{{blog.link}}" target="_blank" class="btn btn-info btn-md">Watch Video</a>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a href="{{blog.link}}" target="_blank" class="btn btn-info btn-md">Watch Video</a>
+                        </div>
                     </div>
                 </div>
             </div>
