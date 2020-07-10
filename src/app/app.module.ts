@@ -18,10 +18,11 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { SanitizerPipe } from './pipes/sanitizer.pipe';
 import { ChatbotComponent } from './components/chatbot/chatbot.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faSquare, faCheckSquare } from '@fortawesome/free-solid-svg-icons';
+import { faSquare, faCheckSquare, faWindowRestore, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { faSquare as farSquare, faCheckSquare as farCheckSquare } from '@fortawesome/free-regular-svg-icons';
 import { faStackOverflow, faGithub, faMedium, faFacebook, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { AngularChatBotComponent } from './components/angular-chat-bot/angular-chat-bot.component';
+import { MinimizeAngularBotComponent } from './components/minimize-angular-bot/minimize-angular-bot.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { AngularChatBotComponent } from './components/angular-chat-bot/angular-c
     AboutPageComponent,
     SanitizerPipe,
     ChatbotComponent,
-    AngularChatBotComponent
+    AngularChatBotComponent,
+    MinimizeAngularBotComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,7 @@ import { AngularChatBotComponent } from './components/angular-chat-bot/angular-c
 export class AppModule {
   constructor(private library: FaIconLibrary){
     library.addIcons(faSquare, faCheckSquare, farSquare
-      , farCheckSquare, faStackOverflow, faGithub, faMedium, faFacebook, faLinkedin,faInstagram);
+      , farCheckSquare, faStackOverflow, faGithub, faMedium, faFacebook, faLinkedin,faInstagram, faWindowRestore, faPencilAlt);
   }
 
  }

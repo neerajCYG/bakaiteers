@@ -1,0 +1,84 @@
+<section class="modal-content" [ngStyle]="{'margin-top':scroll}">
+    <div class="card">
+        <div id="chat_header" class="card-title">
+
+            <div class="d-flex flex-row">
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="p-2 pull-left rounded-circle" id="bot_image"></div>
+                        <p>New Message</p>
+                    </div>
+
+                    <div class="col-md-6">
+                        <span class="p-2 h2" id="botname">BakaiTeers</span>
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <span class="buttons">
+            <button *ngIf="!minimize" type="button" class="btn btn-danger cross" (click)="minimizeChat()">-
+
+            </button>
+            <button *ngIf="minimize" type="button" class="btn btn-danger cross" (click)="maximizeChat()">
+              -
+            </button>
+
+
+<button type="button" class="btn btn-danger cross" (click)="chatlogs()">X</button>
+</span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="card" [ngStyle]="{'visibility': minimize == false ? 'visible' : 'hidden'}">
+
+
+        <div>
+            <br/>
+            <div class="card-body" id="botmsgs" #botmsgs>
+
+                <!-- <div *ngIf="typing==true" class="botimg">...typing</div> -->
+                <div class="d-flex">
+                    <div class="botMsg">
+                        <div class="botimg">
+
+                        </div>Hello! I am BakaiTeers Bot. How may I help You?
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="chat_footer">
+                <div class="input-bar">
+                    <div class="input-bar-item width100">
+                        <form #inputMsg="ngForm" (ngSubmit)="onSubmit()">
+
+
+                            <div class="input-group">
+                                <input required placeholder="Say Hi" (ngModelChange)="Empty()" type="text" class="form-control width100 rounded" name="chatModal.inputQuery" [(ngModel)]="chatModal.inputQuery">
+
+                                <span *ngIf="sendButton==true" class="input-group-btn">
+            <button type="submit" class="btn btn-danger btn-block rounded" >Send
+                <!-- <i class="fa fa-paper-plane" aria-hidden="true"></i> -->
+            </button>
+        </span>
+                                <!-- <span *ngIf="sendButton==false" class="input-group-btn">
+            <button type="submit" class="btn btn-danger btn-block rounded" disabled>
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+            </button>
+        </span> -->
+
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
