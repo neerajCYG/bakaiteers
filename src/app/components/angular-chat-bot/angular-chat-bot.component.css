@@ -39,6 +39,13 @@
     padding-top: 10%;
 }
 
+@media screen and (max-width:812px) {
+    #botname {
+        margin-left: -63px;
+        position: fixed;
+    }
+}
+
 #close {
     color: white;
     float: right;
@@ -79,6 +86,13 @@
     background-image: url(../../../assets/images/Chat.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
+}
+
+@media screen and (max-width:812px) {
+    #bot_image {
+        width: 45px;
+        height: 51px;
+    }
 }
 
 .Chat-icon {

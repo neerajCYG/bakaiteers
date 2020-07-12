@@ -25,3 +25,8 @@
 .container {
     scroll-behavior: smooth !important;
 }
+
+.navbar-nav a:hover {
+    color: darkgray;
+    font-weight: bold;
+}

@@ -21,19 +21,19 @@ export class FooterComponent implements OnInit {
         {
           "link":"https://www.youtube.com/channel/UCJtEuR-Ud8j1x_PzxAoEbHA",
           "title":"Subscribe Our Channel"
-        },
-        {
-          "link":"https://www.youtube.com/watch?v=P9aoqhUSoGQ&t=2s",
-          "title":"Work From Home"
-        },
-        {
-          "link":"https://www.youtube.com/watch?v=AHpAuFjP4jQ&t=1s",
-          "title":"Quarantine"
-        },
-        {
-          "link":"https://www.youtube.com/watch?v=sPtNUoZUgqc",
-          "title":"BakaiTeers vs TikToker"
         }
+        // {
+        //   "link":"https://www.youtube.com/watch?v=P9aoqhUSoGQ&t=2s",
+        //   "title":"Work From Home"
+        // },
+        // {
+        //   "link":"https://www.youtube.com/watch?v=AHpAuFjP4jQ&t=1s",
+        //   "title":"Quarantine"
+        // },
+        // {
+        //   "link":"https://www.youtube.com/watch?v=sPtNUoZUgqc",
+        //   "title":"BakaiTeers vs TikToker"
+        // }
       ],
       "contact": [
         {
@@ -44,7 +44,7 @@ export class FooterComponent implements OnInit {
         {
           "link": "https://www.instagram.com/bakaiteers/",
           "title": "Instagram",
-          "image":""
+          "image":"assets/images/instagram.jpeg"
         }
       ]
     }
