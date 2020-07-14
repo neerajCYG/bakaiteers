@@ -80,6 +80,6 @@ def checkResponse(msg):
 
 
 
-#y= checkResponse(sys.argv[1])
-y= checkResponse("hello")
+y= checkResponse(sys.argv[1])
+#y= checkResponse("hello")
 print(y)
