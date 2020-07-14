@@ -1,0 +1,48 @@
+{
+    "intents": [{
+            "tag": "greeting",
+            "patterns": ["Hi, Hello, sup", "Hey"],
+            "responses": ["Hello , How are you?"],
+            "context": [""]
+        },
+        {
+            "tag": "bye",
+            "patterns": ["bye", "bella ciao", "goodbye"],
+            "responses": ["Bye, Take care."],
+            "context": [""]
+
+        },
+        {
+            "tag": "videos",
+            "patterns": ["show me video, videos, video"],
+            "responses": ["Which video do you want to see?"],
+            "context": [""]
+        },
+        {
+            "tag": "video",
+            "patterns": ["quarantine video", "wfh video", "tiktoker video"],
+            "responses": ["We have all videos"],
+            "context": [""]
+        },
+        {
+            "tag": "reply",
+            "patterns": ["I am good", "I am good, how about you", "How are you", "How about you?", "Very well, u?", "you", "u"],
+            "responses": ["I am good too, thanks for asking."],
+            "context": [""]
+        },
+        {
+            "tag": "query",
+            "patterns": ["I have some query", "contact you", "issues", "problem", "call"],
+            "responses": ["You can write as at bakaiteers@gmail.com or can check our facebook page."],
+            "context": [""]
+        }
+
+
+
+
+
+
+
+
+    ]
+}
