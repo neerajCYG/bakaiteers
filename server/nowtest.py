@@ -16,7 +16,7 @@ classes = pickle.load(open('classes.pkl','rb'))
 warnings.filterwarnings('ignore')
 
 def clean_up_sentence(sentence):
-    
+
     sentence_words = nltk.word_tokenize(sentence)
     sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
     return sentence_words
@@ -80,6 +80,6 @@ def checkResponse(msg):
 
 
 
-y= checkResponse(sys.argv[1])
-#y= checkResponse("hie")
+#y= checkResponse(sys.argv[1])
+y= checkResponse("hello")
 print(y)
