@@ -36,7 +36,9 @@ export class ModalComponent implements OnInit {
 
     this.messageDelivered=true;
     this.spinner.showSpinner()
-    this.http.post("https://heroku-node-bakaiteers.herokuapp.com/send", value).subscribe(res=>{
+
+    const url="https://heroku-node-bakaiteers.herokuapp.com"
+    this.http.post("http://147.139.37.217:3000/send", value).subscribe(res=>{
       this.spinner.hideSpinner()
     if(res){
 

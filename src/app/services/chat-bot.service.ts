@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ChatBotService {
-  url= "http://heroku-node-bakaiteers.herokuapp.com/output?message="
+  url= "http://147.139.37.217:3000/output?message="
   constructor(private http:HttpClient) { }
 
   getMessageOutput(inputText:string){
