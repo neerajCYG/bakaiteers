@@ -1,0 +1,3 @@
+[submodule "bakaiteers"]
+	path = bakaiteers
+	url = https://github.com/neerajCYG/bakaiteers.git
