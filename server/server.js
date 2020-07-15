@@ -76,9 +76,9 @@ app.get('/test', (req, res) => {
 app.get('/output', (req, res) => {
     var spawn = require("child_process").spawn;
 
-    // E.g : http://localhost:3000/output?message="" 
+    // E.g : http://localhost:3000/output?message=""
 
-    var process = spawn('python', ["nowtest.py",
+    var process = spawn('../env/bin/python', ["nowtest.py",
         req.query.message
     ]);
 
