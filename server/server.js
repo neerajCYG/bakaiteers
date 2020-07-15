@@ -78,7 +78,7 @@ app.get('/output', (req, res) => {
 
     // E.g : http://localhost:3000/output?message=""
 
-    var process = spawn('../env/bin/python', ["nowtest.py",
+    var process = spawn('./env/bin/python3', ["nowtest.py",
         req.query.message
     ]);
 
