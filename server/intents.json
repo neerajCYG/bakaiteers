@@ -35,6 +35,30 @@
             "patterns": ["I have some query", "contact you", "issues", "problem", "call"],
             "responses": ["You can write as at bakaiteers@gmail.com or can check our facebook page."],
             "context": [""]
+        },
+        {
+            "tag": "quarantine",
+            "patterns": ["I want to see video related to quarantine", "quarantine video", "lockdown", "dhakad pandey video", "ludo", "cat walk", "girls"],
+            "responses": ["We have a video related to what you asked for 'https://www.youtube.com/watch?v=AHpAuFjP4jQ'. Enjoy!!"],
+            "context": [""]
+        },
+        {
+            "tag": "Work From Home",
+            "patterns": ["I want to see video related to wfh", "work from home video", "lockdown", "mom", "wifi", "pooja", "aashiqui", "kitchen", "food"],
+            "responses": ["We have a video related to what you asked for 'https://www.youtube.com/watch?v=P9aoqhUSoGQ&'. Enjoy!!"],
+            "context": [""]
+        },
+        {
+            "tag": "Tiktoker",
+            "patterns": ["I want to see video related to tiktok", "tiktoker", "bakaiteer vs tiktoker", "chedi bhya", "chedi", "amit tiktoker", "vs"],
+            "responses": ["We have a video related to what you asked for 'https://www.youtube.com/watch?v=sPtNUoZUgqc'. Enjoy!!"],
+            "context": [""]
+        },
+        {
+            "tag": "Horror",
+            "patterns": ["I want to see video related to Horror", "hungama", "horror hungama", "bakchod", "bakchod baba", "baba bakchod", "devansh video", "any video", "bhoot", "ghost videos"],
+            "responses": ["We have a video related to what you asked for 'https://www.youtube.com/watch?v=0MxLtB5dWug'. Enjoy!!"],
+            "context": [""]
         }
 
 
