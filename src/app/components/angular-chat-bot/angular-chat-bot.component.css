@@ -267,9 +267,55 @@
 }
 
 .typing {
-    background-color: #343a40;
-    color: #fff;
+    color: black;
     font-family: tahoma, helvetica, arial, sans-serif;
     font-weight: bold;
     text-align: initial;
+    margin-left: -38px;
+}
+
+#botTypingImage {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(52, 216, 249, 0.7);
+    border-radius: 100%;
+    background-image: url(../../../assets/images/Chat.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#typing-loader {
+    width: 9px;
+    height: 5px;
+    border-radius: 50%;
+    animation: typing 2s linear infinite alternate;
+    position: relative;
+    left: -3rem;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+    #typing-loader {
+        left: -7rem;
+        margin-top: -8px !important;
+        display: block;
+    }
+}
+
+@keyframes typing {
+    0% {
+        background-color: rgba(0, 0, 0, 1);
+        box-shadow: 14px 0 0 0 rgba(0, 0, 0, 0.2), 26px 0 0 0 rgba(0, 0, 0, 0.2);
+    }
+    25% {
+        background-color: rgba(0, 0, 0, 0.4);
+        box-shadow: 14px 0 0 0 rgba(0, 0, 0, 2), 26px 0 0 0 rgba(0, 0, 0, 0.2);
+    }
+    75% {
+        background-color: rgba(0, 0, 0, 0.4);
+        box-shadow: 14px 0 0 0 rgba(0, 0, 0, 0.2), 26px 0 0 0 rgba(0, 0, 0, 1);
+    }
 }

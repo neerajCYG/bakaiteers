@@ -50,9 +50,20 @@
                 </div>
 
             </div>
-            <div class="row">
-                <p class="col-sm-12 typing">Typing<span>...</span></p>
+            <div class="container" *ngIf="botTyping">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="pull-left rounded-circle" id="botTypingImage">
+                        </div>
+
+                    </div>
+                    <div class="col-sm-2">
+                        <div id="typing-loader"></div>
+                    </div>
+
+                </div>
             </div>
+
 
             <div id="chat_footer">
                 <div class="input-bar">

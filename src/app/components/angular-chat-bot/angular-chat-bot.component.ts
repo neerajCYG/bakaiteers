@@ -14,6 +14,7 @@ export class AngularChatBotComponent implements OnInit {
   minimize=false;
   chatModal=new Chatbox("");
   typing=true;
+  botTyping=false;
   bottext:string="Hello, How may I help you?";
   randomStuff:Array<string>=["Hello Nice to here you","Hey Whatsupp","How can I help you","I am your assitant","I am unable to get"];
   @ViewChild('botmsgs') divMsgs: ElementRef;
@@ -112,10 +113,10 @@ export class AngularChatBotComponent implements OnInit {
 
       else{
         this.typing=true;
+        this.botTyping=true;
         this.chatBotService.getMessageOutput(this.chatModal.inputQuery).subscribe( message=>{
-          this.typing=false
-          console.log(message)
-          console.log(message['output'])
+          this.typing=false;
+          this.botTyping=false;
           this.bottext=this.renderer.createText(message['output']);
           this.renderer.appendChild(botSub,botimg);
           this.renderer.appendChild(botSub,this.bottext);
