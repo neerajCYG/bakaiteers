@@ -11,7 +11,14 @@
                     <i class="close" data-dismiss="modal" id="close" class="fa fa-times"></i></h6>
             </div>
 
-            <app-angular-chat-bot *ngIf="!edited && !minimize" (editedValue)="onValueChange($event)"></app-angular-chat-bot>
+            <div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <app-angular-chat-bot *ngIf="!edited && !minimize" (editedValue)="onValueChange($event)"></app-angular-chat-bot>
+
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>

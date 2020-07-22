@@ -265,3 +265,11 @@
 .card {
     border: 1px solid gray !important;
 }
+
+.typing {
+    background-color: #343a40;
+    color: #fff;
+    font-family: tahoma, helvetica, arial, sans-serif;
+    font-weight: bold;
+    text-align: initial;
+}

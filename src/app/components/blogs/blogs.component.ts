@@ -61,7 +61,7 @@ export class BlogsComponent implements OnInit {
           "embeddedLink":"https://www.youtube.com/embed/AHpAuFjP4jQ"
         },
         {
-          'title':"BakaiTeers vs TikToker",
+          'title':"Bakaiteers | BakaiTeers vs TikToker",
           "link":"https://www.youtube.com/watch?v=sPtNUoZUgqc",
           "embeddedLink":"https://www.youtube.com/embed/sPtNUoZUgqc"
         }
