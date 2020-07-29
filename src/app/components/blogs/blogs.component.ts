@@ -71,6 +71,11 @@ export class BlogsComponent implements OnInit {
           'title':"BakaiTeers | Horror Hungama",
           "link":"https://www.youtube.com/watch?v=0MxLtB5dWug",
           "embeddedLink":"https://www.youtube.com/embed/0MxLtB5dWug"
+        },
+        {
+          'title':"BakaiTeers | Mom vs Manager",
+          "link":"https://www.youtube.com/watch?v=iOSjekjxOFA",
+          "embeddedLink":"https://www.youtube.com/embed/iOSjekjxOFA"
         }
 
       ]
