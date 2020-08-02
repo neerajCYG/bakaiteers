@@ -24,6 +24,9 @@ export class BlogsComponent implements OnInit {
   constructor(private http:HttpClient, private spinner:SpinnerService) { }
 
   ngOnInit(): void {
+
+    console.log(window.screen.availHeight)
+    console.log(window.screen.availWidth)
    //this.spinner.showSpinner()
 
 
@@ -51,7 +54,7 @@ export class BlogsComponent implements OnInit {
           "embeddedLink":"https://www.youtube.com/embed/P9aoqhUSoGQ"
         },
         {
-          'title':"BakaiTeers- Breaking News | Coming Soon",
+          'title':"BakaiTeers | Breaking News",
           "link":"https://www.youtube.com/watch?v=QylD2UVQbds",
           "embeddedLink":"https://www.youtube.com/embed/QylD2UVQbds"
         },

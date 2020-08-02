@@ -1,5 +1,5 @@
 .card {
-    height: 400px;
+    height: 100%;
     background-color: #343a40;
 }
 
@@ -63,13 +63,20 @@ a {
 }
 
 iframe {
-    width: 250px;
+    width: 248px;
     height: 215px;
 }
 
 @media screen and (max-width:1024px) {
     .iframe {
         width: 201px;
+        height: 215px;
+    }
+}
+
+@media screen and (max-width:960px) {
+    .iframe {
+        width: 145px;
         height: 215px;
     }
 }
