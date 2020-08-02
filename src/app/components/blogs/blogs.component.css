@@ -61,3 +61,15 @@ a {
         margin-top: 0px !important;
     }
 }
+
+iframe {
+    width: 250px;
+    height: 215px;
+}
+
+@media screen and (max-width:1024px) {
+    .iframe {
+        width: 201px;
+        height: 215px;
+    }
+}
