@@ -81,7 +81,7 @@ export class BlogsComponent implements OnInit {
           "embeddedLink":"https://www.youtube.com/embed/iOSjekjxOFA"
         },
         {
-          'title':"BakaiTeers | BakaiTeers | Types of Chai Lovers",
+          'title':"BakaiTeers | Types of Chai Lovers",
           "link":"https://www.youtube.com/watch?v=u0qdWbfYKjo",
           "embeddedLink":"https://www.youtube.com/embed/u0qdWbfYKjo"
         }
