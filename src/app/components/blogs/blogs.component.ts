@@ -84,6 +84,11 @@ export class BlogsComponent implements OnInit {
           'title':"BakaiTeers | Types of Chai Lovers",
           "link":"https://www.youtube.com/watch?v=u0qdWbfYKjo",
           "embeddedLink":"https://www.youtube.com/embed/u0qdWbfYKjo"
+        },
+        {
+          'title':"BakaiTeers | Online Classes",
+          "link":"https://www.youtube.com/watch?v=UFYrALUJadM",
+          "embeddedLink":"https://www.youtube.com/embed/UFYrALUJadM"
         }
 
       ]
