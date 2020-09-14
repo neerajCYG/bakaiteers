@@ -91,6 +91,19 @@ export class BlogsComponent implements OnInit {
           "embeddedLink":"https://www.youtube.com/embed/UFYrALUJadM"
         }
 
+      ],
+      "videoPart3":[
+        {
+          'title':"BakaiTeers | Day Without Phone",
+          "link":"https://www.youtube.com/watch?v=OVMar4URq28",
+          "embeddedLink":"https://www.youtube.com/embed/OVMar4URq28"
+        },
+        {
+          'title':"BakaiTeers | Awaaz Ka Rahasya | Short Story",
+          "link":"https://www.youtube.com/watch?v=Utk2qwkf_ms",
+          "embeddedLink":"https://www.youtube.com/embed/Utk2qwkf_ms"
+        }
+
       ]
     }
   }
