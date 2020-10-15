@@ -91,7 +91,36 @@
       </div>
   </div>
 
+  <div>
+    <div class="row blogs videoPart2">
+        <div class="col-md-3 cards" *ngFor="let blog of blogs['videoPart4']">
+            <div class="card">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="frame">
+                            <!-- <img class="card-img-top" src="" alt="Card image cap"> -->
+                            <iframe class="iframe" [src]="blog.embeddedLink | sanitizer" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-sm-12">
+                        <div class="card-body">
+                            <h5 class="card-title">{{blog.title}}</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="{{blog.link}}" target="_blank" class="btn btn-info btn-md">Watch Video</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 </div>

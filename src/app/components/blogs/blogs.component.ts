@@ -102,7 +102,26 @@ export class BlogsComponent implements OnInit {
           'title':"BakaiTeers | Awaaz Ka Rahasya | Short Story",
           "link":"https://www.youtube.com/watch?v=Utk2qwkf_ms",
           "embeddedLink":"https://www.youtube.com/embed/Utk2qwkf_ms"
+        },
+        {
+          'title':"BakaiTeers | Types of Superstitions",
+          "link":"https://www.youtube.com/watch?v=AyZusz1xSMs",
+          "embeddedLink":"https://www.youtube.com/embed/AyZusz1xSMs"
+        },
+        {
+          'title':"BakaiTeers | IPL ki Takraar",
+          "link":"https://www.youtube.com/watch?v=OiRQJu7BFO8",
+          "embeddedLink":"https://www.youtube.com/embed/OiRQJu7BFO8"
         }
+
+      ],
+      "videoPart4":[
+        {
+          'title':"BakaiTeers | Pati Patni AURRR GAAANNNN",
+          "link":"https://www.youtube.com/watch?v=OaNCwyrLGAs",
+          "embeddedLink":"https://www.youtube.com/embed/OaNCwyrLGAs"
+        }
+
 
       ]
     }
