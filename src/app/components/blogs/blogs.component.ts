@@ -117,7 +117,7 @@ export class BlogsComponent implements OnInit {
         {
           'title':"BakaiTeers | Old vs New Generation",
           "link":"https://www.youtube.com/watch?v=hLv4SQZd9e8",
-          "embeddedLink":"https://www.youtube.com/watch?v=hLv4SQZd9e8"
+          "embeddedLink":"https://www.youtube.com/embed/hLv4SQZd9e8"
 
         }
 
