@@ -119,6 +119,12 @@ export class BlogsComponent implements OnInit {
           "link":"https://www.youtube.com/watch?v=hLv4SQZd9e8",
           "embeddedLink":"https://www.youtube.com/embed/hLv4SQZd9e8"
 
+        },
+        {
+          'title':"BakaiTeers | Diwali | Expectation vs Reality",
+          "link":"https://www.youtube.com/watch?v=o3qgy52CRSY",
+          "embeddedLink":"https://www.youtube.com/embed/o3qgy52CRSY"
+
         }
 
 

@@ -20,12 +20,6 @@ a {
 
 
 @media screen and (max-width:812px) {
-    .frame {
-        margin-top: 32px;
-    }
-}
-
-@media screen and (max-width:812px) {
     .frame iframe {
         width: 100% !important;
     }
@@ -37,28 +31,23 @@ a {
     }
 }
 
-@media screen and (max-width:812px) {
-    .card {
-        height: 420px;
-    }
-}
 
 
 iframe {
     width: 100%;
-    height: 215px;
+    height: auto;
 }
 
-@media screen and (max-width:1024px) {
+/* @media screen and (max-width:1024px) {
     .iframe {
         width: 100%;
-        height: 215px;
+        height: auto;
     }
 }
 
 @media screen and (max-width:960px) {
     .iframe {
         width: 100%;
-        height: 215px;
+        height: auto;
     }
-}
+} */
