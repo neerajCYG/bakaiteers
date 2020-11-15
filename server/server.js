@@ -6,7 +6,10 @@ var port = process.env.PORT || 3000;
 var config = require('./config.json')
 const schema = require('./schema/schema')
 var MongoClient = require('mongodb').MongoClient;
-var cors = require('cors')
+var cors = require('cors');
+var User= require('./schema/user');
+const jwt = require("jsonwebtoken");
+const fs = require('fs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors())
@@ -53,8 +56,8 @@ app.post('/send', (req, res) => {
 })
 
 app.get('/youtubeData', (req, res) => {
-    const uri = "mongodb+srv://neeraj211090:Sports@111@bakaiteers-8fh9p.mongodb.net/bakaiteers?retryWrites=true&w=majority";
-    MongoClient.connect(uri, function(err, db) {
+  const uri= "mongodb+srv://neeraj211090:Sports@111@bakaiteers.8fh9p.mongodb.net"
+  MongoClient.connect(uri, function(err, db) {
         if (err) throw err;
         var dbo = db.db("bakaiteers");
         dbo.collection("youtubes").find({}).toArray(function(err, result) {
@@ -89,6 +92,55 @@ app.get('/output', (req, res) => {
         });
     })
 })
+
+
+app.post('/login' , (req,res)=>{
+  console.log(req.body)
+
+    const uri= "mongodb+srv://neeraj211090:Sports@111@bakaiteers.8fh9p.mongodb.net"
+
+
+    MongoClient.connect(uri, function(err, db) {
+      if (err) throw err;
+      var dbo = db.db("bakaiteers");
+
+      var userObj ={
+        userEmail : req.body.userEmail,
+        username : req.body.username
+    };
+
+    var token = jwt.sign({ foo: 'bar' }, 'shhhhh');
+
+  dbo.collection("users").find(userObj).toArray(function(err, result) {
+    if (err) throw err;
+    if(result.length==0){
+      dbo.collection("users").insertOne(userObj, function(err, result){
+        if (err) throw err;
+        console.log("Record added as");
+        res.send({
+          res: "Users credentials added successfully!",
+          token:token,
+          status: 200
+      })
+      db.close();
+      });
+    }
+    else{
+      res.send({
+        res: "Users exists",
+        token:token,
+        status: 200
+    })
+    }
+    db.close();
+});
+
+
+
+  });
+
+})
+
 
 app.listen(port, function() {
     console.log("Express Started on Port" + port);
