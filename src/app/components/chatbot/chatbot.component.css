@@ -51,7 +51,7 @@
     background-color: rgba(0, 0, 0, .0) !important;
     border: none !important;
     position: fixed !important;
-    width: 85% !important;
+    width: 31% !important;
 }
 
 #chatdone {
@@ -189,6 +189,7 @@
 }
 
 .modal-dialog {
-    z-index: 2000;
-    position: sticky;
+    z-index: 99999999;
+    position: fixed;
+    display: contents;
 }

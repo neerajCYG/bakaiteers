@@ -41,7 +41,7 @@
 
 @media screen and (max-width:812px) {
     #botname {
-        margin-left: -63px;
+        margin-left: -26px;
         position: fixed;
     }
 }
@@ -57,14 +57,15 @@
     background-color: rgba(0, 0, 0, .0) !important;
     border: none !important;
     position: fixed !important;
-    margin-left: 463px !important;
-    width: 81% !important;
+    /* margin-left: 463px !important; */
+    width: 31% !important;
+    z-index: 2202 !important;
 }
 
 @media screen and (max-width:812px) {
     .modal-content {
         margin-left: 0px !important;
-        width: 100% !important;
+        width: 91% !important;
     }
 }
 

@@ -20,9 +20,15 @@ import { ChatbotComponent } from './components/chatbot/chatbot.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faSquare, faCheckSquare, faWindowRestore, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { faSquare as farSquare, faCheckSquare as farCheckSquare } from '@fortawesome/free-regular-svg-icons';
-import { faStackOverflow, faGithub, faMedium, faFacebook, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faStackOverflow, faGithub, faMedium, faFacebook, faLinkedin, faInstagram, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { AngularChatBotComponent } from './components/angular-chat-bot/angular-chat-bot.component';
 import { MinimizeAngularBotComponent } from './components/minimize-angular-bot/minimize-angular-bot.component';
+import { SocialLoginComponent } from './components/social-login/social-login.component';
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider
+} from 'angularx-social-login';
 
 
 @NgModule({
@@ -38,7 +44,8 @@ import { MinimizeAngularBotComponent } from './components/minimize-angular-bot/m
     SanitizerPipe,
     ChatbotComponent,
     AngularChatBotComponent,
-    MinimizeAngularBotComponent
+    MinimizeAngularBotComponent,
+    SocialLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -50,16 +57,36 @@ import { MinimizeAngularBotComponent } from './components/minimize-angular-bot/m
     NgbCollapseModule,
     NgxSpinnerModule,
     BrowserAnimationsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    SocialLoginModule
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '870665867071-ojnhns10f3qsfhpl0vrapcgn3mqrhltl.apps.googleusercontent.com'
+            )
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('268798031150499')
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
   constructor(private library: FaIconLibrary){
     library.addIcons(faSquare, faCheckSquare, farSquare
-      , farCheckSquare, faStackOverflow, faGithub, faMedium, faFacebook, faLinkedin,faInstagram, faWindowRestore, faPencilAlt);
+      , farCheckSquare, faStackOverflow, faGithub, faMedium, faFacebook, faLinkedin,faInstagram, faWindowRestore, faPencilAlt, faGoogle);
   }
 
  }

@@ -70,3 +70,6 @@
 /* .navbar-nav a:hover {
     color: blue !important;
 } */
+.svg-inline--fa.fa-w-16 {
+  width: 2em !important;
+}

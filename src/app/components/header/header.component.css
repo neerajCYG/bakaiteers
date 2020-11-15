@@ -30,3 +30,7 @@
     color: darkgray;
     font-weight: bold;
 }
+
+.active{
+  font-weight: bold;
+}
