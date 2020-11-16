@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SocialAuthService } from "angularx-social-login";
 import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
 import { SocialUser } from "angularx-social-login";
@@ -11,6 +11,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./social-login.component.css']
 })
 export class SocialLoginComponent implements OnInit {
+ // @Input() isLoginModalOpen=false;
+
+  @Output() isLoginModalOpen= new EventEmitter<{isLoginModalOpenValue:boolean}>();
+
   user: SocialUser;
   loggedIn: boolean=false;
   constructor(private router:Router, private authService: SocialAuthService, private loginService:LoginService) { }
@@ -24,7 +28,8 @@ export class SocialLoginComponent implements OnInit {
   }
 
   signInWithGoogle(): void {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).catch(err=>console.log(err));
+    this.router.navigate(['']);
     this.authService.authState.subscribe(user=>{
       this.user=user;
       const loginObj= {
@@ -45,8 +50,8 @@ export class SocialLoginComponent implements OnInit {
   }
 
   signInWithFB(): void {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).catch(err=>console.log(err))
+    this.router.navigate(['']);
   }
 
 
@@ -55,7 +60,7 @@ export class SocialLoginComponent implements OnInit {
   }
 
   closeLoginModal(){
-
+    this.isLoginModalOpen.emit({isLoginModalOpenValue:false});
   }
 
 }

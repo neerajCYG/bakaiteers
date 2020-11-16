@@ -10,15 +10,14 @@ export class HeaderComponent implements OnInit {
   user: SocialUser;
   loggedIn: boolean=false;
   public isCollapsed = true;
-  isLoginModalOpen=false;
+  isLoginModalOpen:boolean=false;
+  userName="";
   constructor(private router:Router,private authService: SocialAuthService) { }
-  timer=1
   ngOnInit(): void {
     this.authService.authState.subscribe(user => {
       this.user = user;
       this.loggedIn = (user != null);
-      console.log(this.user)
-      console.log(this.loggedIn)
+      this.userName=this.user.name;
     });
 
   }
@@ -44,5 +43,9 @@ export class HeaderComponent implements OnInit {
     this.authService.signOut();
     this.loggedIn=false;
     this.isLoginModalOpen= false;
+  }
+
+  onChangeLoginModal(data:{isLoginModalOpenValue:boolean}){
+    this.isLoginModalOpen= data['isLoginModalOpenValue'];
   }
 }

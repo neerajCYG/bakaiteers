@@ -28,3 +28,13 @@
   z-index: 2203;
 }
 
+.card-header:first-child {
+  width: 113%;
+}
+
+.card{
+  background-color: #343a40;
+  top: 40%;
+  left: 38%;
+  height: auto;
+}

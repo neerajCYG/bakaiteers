@@ -33,4 +33,21 @@
 
 .active{
   font-weight: bold;
+
+}
+/* .dropdown-item{
+  color: white !important;
+} */
+
+.dropdown-menu{
+  background-color: #343a40;
+  width: 100%;
+
+}
+
+
+.dropdown-item:hover, .dropdown-item:focus {
+  color: #16181b;
+  text-decoration: none;
+  background-color: darkgray;
 }

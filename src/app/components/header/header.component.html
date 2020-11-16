@@ -1,5 +1,5 @@
 <div class="container">
-    <app-social-login *ngIf="isLoginModalOpen"></app-social-login>
+    <app-social-login (isLoginModalOpen)="onChangeLoginModal($event)" *ngIf="isLoginModalOpen"></app-social-login>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light  bg-dark">
         <!-- <a  href="#">Logo</a> -->
         <img style="cursor: pointer;" (click)="backHome()" class="navbar-brand" id="img" class="style-scope yt-img-shadow" alt="Avatar image" height="42" width="42" src="assets/images/bk3.jpg">
@@ -24,7 +24,7 @@
                 <li class="nav-item" routerLinkActive="active">
                     <a class="nav-link" routerLink="about">About</a>
                 </li>
-                <li class="nav-item" routerLinkActive="active">
+                <li class="nav-item" routerLinkActive="active" *ngIf="user">
                   <a class="nav-link" routerLink="about">Blogs</a>
               </li>
 
@@ -35,11 +35,30 @@
             </li>
             </ul>
 
-            <ul class="navbar-nav ml-auto" *ngIf="loggedIn">
+
+
+
+
+            <!-- <ul class="navbar-nav ml-auto" *ngIf="loggedIn">
               <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" (click)="loggingOut()">Log Out</a>
+
+                <a class="nav-link" (click)="loggingOut()">Welcome {{userName}}, Log Out</a>
             </li>
-            </ul>
+            </ul> -->
+
+
+
+            <ul class="navbar-nav ml-auto" *ngIf="loggedIn">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Welcome {{userName}}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">My Profile</a>
+                  <a class="dropdown-item" (click)="loggingOut()" href="">Log Out</a>
+                  </div>
+              </li>
+              </ul>
         </div>
     </nav>
 </div>

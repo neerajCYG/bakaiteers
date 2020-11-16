@@ -29,6 +29,7 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider
 } from 'angularx-social-login';
+import { SearchVideoComponent } from './components/search-video/search-video.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import {
     ChatbotComponent,
     AngularChatBotComponent,
     MinimizeAngularBotComponent,
-    SocialLoginComponent
+    SocialLoginComponent,
+    SearchVideoComponent
   ],
   imports: [
     BrowserModule,
