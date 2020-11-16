@@ -37,4 +37,11 @@
   top: 40%;
   left: 38%;
   height: auto;
+
+}
+
+@media screen and (max-width:812px) {
+  .card {
+    left: auto;
+  }
 }
