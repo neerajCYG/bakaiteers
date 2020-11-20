@@ -1,0 +1,78 @@
+
+<div class="container">
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-12 col-12 col-xl-12">
+    <h3>Event Rules:</h3>
+
+    <p>1. All the fields should be valid below.<br/>
+       2. Enter the address of your house on which we will deliver the prize (in case you win).<br/>
+       3. Enter a valid phone number which is working and we can reach out to you.<br/>
+       4. Only 1 entry is allowed. You cannot get entry with same address and different phone number.</p>
+
+
+  </div>
+</div>
+
+
+<form [formGroup]="inputForm" (ngSubmit)="onSubmit()">
+  <div formGroupName="userData">
+
+
+  <div class="form-row">
+    <div class="form-group col-md-6 col-xl-6 col-sm-6 col-6 col-lg-6">
+      <label for="inputEmail4">Email*</label>
+      <input type="email" class="form-control" formControlName="email" id="inputEmail4" placeholder="Email">
+      <span *ngIf="!inputForm.get('userData.email').valid && inputForm.get('userData.email').touched " class="help-block">Please enter a valid Email</span>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6 col-xl-6 col-sm-6 col-6 col-lg-6">
+      <label for="inputName">Full Name*</label>
+      <input type="text" class="form-control" formControlName="name" id="inputName" placeholder="Full Name">
+      <span *ngIf="!inputForm.get('userData.name').valid && inputForm.get('userData.name').touched " class="help-block">Please enter a valid Full Name</span>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6 col-xl-6 col-sm-6 col-6 col-lg-6">
+      <label for="inputPhone">Phone Number*</label>
+      <input  class="form-control" formControlName="phone" id="inputPhone" placeholder="XXX-XXX-XXXX">
+      <span *ngIf="!inputForm.get('userData.phone').valid && inputForm.get('userData.phone').touched " class="help-block">Please enter a valid Phone Number</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address 1*</label>
+    <input type="text" class="form-control" formControlName="address1" id="inputAddress" placeholder="1234 Main St">
+    <span *ngIf="!inputForm.get('userData.address1').valid && inputForm.get('userData.address1').touched " class="help-block">Please do not leave Address field blank</span>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Address 2</label>
+    <input  type="text" class="form-control" id="inputAddress2" formControlName="address2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6 col-xl-6 col-sm-6 col-6 col-lg-6">
+      <label for="inputCity">City*</label>
+      <input type="text" class="form-control" formControlName="city" id="inputCity">
+      <span *ngIf="!inputForm.get('userData.city').valid && inputForm.get('userData.city').touched " class="help-block">Please do not leave City field blank</span>
+    </div>
+    <div class="form-group col-md-4 col-xl-4 col-sm-4 col-4 col-lg-4">
+      <label for="inputState">State*</label>
+      <select id="inputState" formControlName="state" (change)="selectionChange($event)" class="form-control">
+        <option selected>Choose...</option>
+        <option *ngFor="let state of states">{{state}}</option>
+      </select>
+      <span *ngIf="!inputForm.get('userData.state').valid && inputForm.get('userData.state').touched || dropdownError" class="help-block">Please select a State</span>
+
+    </div>
+    <div class="form-group col-md-2 col-xl-2 col-sm-2 col-2 col-lg-2">
+      <label for="inputZip" >Zip*</label>
+      <input type="text" class="form-control" formControlName="zip" id="inputZip">
+      <span *ngIf="!inputForm.get('userData.zip').valid && inputForm.get('userData.zip').touched " class="help-block">Please enter 6 digits zip</span>
+    </div>
+  </div>
+</div>
+  <button type="submit" [disabled]="inputForm.valid ? false :true" class="btn btn-primary">Submit</button>
+
+
+</form>
+<h3>{{message}}</h3>
+</div>

@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Subject } from 'rxjs';
+import { faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 @Injectable({
   providedIn: 'root'
 })
 export class SocialloginService {
-  url;
+   user = new Subject();
   constructor(private http:HttpClient) { }
 
-  savesResponse(response){
-    this.url= 'http://localhost:4200/Api/Login/Savesresponse';
-    return this.http.post(this.url, response)
+  isuserActive(token){
+    this.user.next(token);
   }
 }

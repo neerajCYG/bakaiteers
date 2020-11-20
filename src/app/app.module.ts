@@ -30,6 +30,7 @@ import {
   FacebookLoginProvider
 } from 'angularx-social-login';
 import { SearchVideoComponent } from './components/search-video/search-video.component';
+import { FormComponent } from './components/form/form.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { SearchVideoComponent } from './components/search-video/search-video.com
     AngularChatBotComponent,
     MinimizeAngularBotComponent,
     SocialLoginComponent,
-    SearchVideoComponent
+    SearchVideoComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,8 @@ import { SearchVideoComponent } from './components/search-video/search-video.com
     NgxSpinnerModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
-    SocialLoginModule
+    SocialLoginModule,
+    ReactiveFormsModule
 
   ],
   providers: [

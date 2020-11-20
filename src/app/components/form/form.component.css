@@ -1,0 +1,29 @@
+.container{
+  text-align: initial;
+  margin-bottom: 47px;
+
+}
+
+.form-control.ng-pristine.ng-invalid.ng-touched{
+  border: 2px solid red;
+}
+
+.form-control.ng-touched.ng-dirty.ng-invalid{
+  border: 2px solid red;
+}
+
+.form-control{
+  background: lightgray;
+  color: black;
+
+}
+
+.form-row{
+  width: auto;
+}
+#inputState{
+  color: black;
+}
+.help-block{
+  color:red;
+}

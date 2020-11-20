@@ -4,7 +4,9 @@ import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-logi
 import { SocialUser } from "angularx-social-login";
 import { NgbActiveModal, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { LoginService } from 'src/app/services/login.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { SocialloginService } from 'src/app/services/sociallogin.service';
+import { Subject } from 'rxjs';
 @Component({
   selector: 'app-social-login',
   templateUrl: './social-login.component.html',
@@ -12,24 +14,26 @@ import { Router } from '@angular/router';
 })
 export class SocialLoginComponent implements OnInit {
  // @Input() isLoginModalOpen=false;
-
+ userToken = new Subject<any[]>();
   @Output() isLoginModalOpen= new EventEmitter<{isLoginModalOpenValue:boolean}>();
 
   user: SocialUser;
   loggedIn: boolean=false;
-  constructor(private router:Router, private authService: SocialAuthService, private loginService:LoginService) { }
+  constructor(private socialLoginService:SocialloginService, private route:ActivatedRoute, private router:Router, private authService: SocialAuthService, private loginService:LoginService) {
+   }
 
   ngOnInit() {
     this.authService.authState.subscribe(user => {
       this.user = user;
+
       this.loggedIn = (user != null);
+      this.loginService.isUserLogged(this.user);
     });
 
   }
 
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).catch(err=>console.log(err));
-    this.router.navigate(['']);
     this.authService.authState.subscribe(user=>{
       this.user=user;
       const loginObj= {
@@ -38,8 +42,9 @@ export class SocialLoginComponent implements OnInit {
       }
       this.loginService.login(loginObj).subscribe(response=>{
         console.log(response);
-        const token= localStorage.setItem('token', response['token']);
-        this.router.navigate(['']);
+        const token= localStorage.setItem('token', JSON.stringify(response['token']));
+        this.router.navigate([response['token']],{queryParams:{loggedin:true}});
+
 
       }, errorMessage=>{
         console.log(errorMessage)
@@ -51,7 +56,24 @@ export class SocialLoginComponent implements OnInit {
 
   signInWithFB(): void {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).catch(err=>console.log(err))
-    this.router.navigate(['']);
+    this.authService.authState.subscribe(user=>{
+      this.user=user;
+      const loginObj= {
+        userEmail:this.user.email,
+        username:this.user.name
+      }
+      this.loginService.login(loginObj).subscribe(response=>{
+        console.log(response);
+        const token= localStorage.setItem('token', response['token']);
+        this.router.navigate([response['token']]);
+
+      }, errorMessage=>{
+        console.log(errorMessage)
+      })
+
+
+    })
+
   }
 
 
@@ -62,5 +84,6 @@ export class SocialLoginComponent implements OnInit {
   closeLoginModal(){
     this.isLoginModalOpen.emit({isLoginModalOpenValue:false});
   }
+
 
 }

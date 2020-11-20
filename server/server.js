@@ -142,6 +142,83 @@ app.post('/login' , (req,res)=>{
 })
 
 
+app.post('/formdata' , (req,res)=>{
+  console.log(req.body)
+
+    const uri= "mongodb+srv://neeraj211090:Sports@111@bakaiteers.8fh9p.mongodb.net"
+
+
+    MongoClient.connect(uri, function(err, db) {
+      if (err) throw err;
+      var dbo = db.db("bakaiteers");
+
+      var userObj ={
+        email : req.body.userData.email,
+        name:req.body.userData.name,
+        phone : req.body.userData.phone,
+        address1: req.body.userData.address1,
+        address2: req.body.userData.address2,
+        city: req.body.userData.city,
+        state:req.body.userData.state,
+        zip:req.body.userData.zip
+    };
+
+
+  dbo.collection("forms").find({$or: [  {phone:userObj.phone},{email:userObj.email}]}).toArray(function(err, result) {
+    if (err) throw err;
+
+    if(result.length==0){
+
+
+      dbo.collection("forms").insertOne(userObj, function(err, result){
+        if (err) throw err;
+        res.send({
+          res: "Forms saved successfully!",
+          exist:false,
+          status: 200
+      })
+      });
+    }
+    else if(result[0].email==userObj.email) {
+      console.log(result[0].email)
+      res.send({
+        res:{
+          message:"Email Exists",
+          exist:true
+        } ,
+        status: 200
+    })
+    }
+    else if(result[0].phone==userObj.phone) {
+      console.log(result[0].email)
+      res.send({
+        res:{
+          message:"Phone Number Exists",
+          exist:true
+        } ,
+        status: 200
+    })
+    }
+    else {
+      console.log(result[0].email)
+      res.send({
+        res:{
+          message:"Data exists",
+          exist:true
+        } ,
+        status: 200
+    })
+    }
+    db.close();
+});
+
+
+
+  });
+
+})
+
+
 app.listen(port, function() {
     console.log("Express Started on Port" + port);
 });
