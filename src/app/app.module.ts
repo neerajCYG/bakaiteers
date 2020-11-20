@@ -31,6 +31,7 @@ import {
 } from 'angularx-social-login';
 import { SearchVideoComponent } from './components/search-video/search-video.component';
 import { FormComponent } from './components/form/form.component';
+import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { FormComponent } from './components/form/form.component';
     MinimizeAngularBotComponent,
     SocialLoginComponent,
     SearchVideoComponent,
-    FormComponent
+    FormComponent,
+    ConfirmModalComponent
   ],
   imports: [
     BrowserModule,

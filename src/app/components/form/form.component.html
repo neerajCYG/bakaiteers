@@ -7,7 +7,11 @@
     <p>1. All the fields should be valid below.<br/>
        2. Enter the address of your house on which we will deliver the prize (in case you win).<br/>
        3. Enter a valid phone number which is working and we can reach out to you.<br/>
-       4. Only 1 entry is allowed. You cannot get entry with same address and different phone number.</p>
+       4. You have to fill the form below which will navigate you to the event link where you have to perfom 3 tasks.<br/>
+       5. Please make sure that the email id entered below should be same in the event as well.<br/>
+       6. Only 1 entry is allowed. You cannot get entry with same address and different phone number.<br/>
+       7. The email id which you will use while submitting the form below should be same which you will use to complete the event tasks.<br/>
+       8. For any queries, please reach out at <b>bakaiteers@gmail.com</b></p>
 
 
   </div>
@@ -15,25 +19,26 @@
 
 
 <form [formGroup]="inputForm" (ngSubmit)="onSubmit()">
+
   <div formGroupName="userData">
 
 
   <div class="form-row">
-    <div class="form-group col-md-6 col-xl-6 col-sm-6 col-6 col-lg-6">
+    <div class="form-group col-md-12 col-xl-12 col-sm-12 col-12 col-lg-12">
       <label for="inputEmail4">Email*</label>
       <input type="email" class="form-control" formControlName="email" id="inputEmail4" placeholder="Email">
       <span *ngIf="!inputForm.get('userData.email').valid && inputForm.get('userData.email').touched " class="help-block">Please enter a valid Email</span>
     </div>
   </div>
   <div class="form-row">
-    <div class="form-group col-md-6 col-xl-6 col-sm-6 col-6 col-lg-6">
+    <div class="form-group col-md-12 col-xl-12 col-sm-12 col-12 col-lg-12">
       <label for="inputName">Full Name*</label>
       <input type="text" class="form-control" formControlName="name" id="inputName" placeholder="Full Name">
       <span *ngIf="!inputForm.get('userData.name').valid && inputForm.get('userData.name').touched " class="help-block">Please enter a valid Full Name</span>
     </div>
   </div>
   <div class="form-row">
-    <div class="form-group col-md-6 col-xl-6 col-sm-6 col-6 col-lg-6">
+    <div class="form-group col-md-12 col-xl-12 col-sm-12 col-12 col-lg-12">
       <label for="inputPhone">Phone Number*</label>
       <input  class="form-control" formControlName="phone" id="inputPhone" placeholder="XXX-XXX-XXXX">
       <span *ngIf="!inputForm.get('userData.phone').valid && inputForm.get('userData.phone').touched " class="help-block">Please enter a valid Phone Number</span>
@@ -72,7 +77,11 @@
 </div>
   <button type="submit" [disabled]="inputForm.valid ? false :true" class="btn btn-primary">Submit</button>
 
-
 </form>
-<h3>{{message}}</h3>
+
 </div>
+
+
+
+
+

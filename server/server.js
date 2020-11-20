@@ -167,13 +167,15 @@ app.post('/formdata' , (req,res)=>{
   dbo.collection("forms").find({$or: [  {phone:userObj.phone},{email:userObj.email}]}).toArray(function(err, result) {
     if (err) throw err;
 
+    //mongo "mongodb+srv://bakaiteers.8fh9p.mongodb.net/bakaiteers" --username neeraj211090 --password Sports@111
+
     if(result.length==0){
 
 
       dbo.collection("forms").insertOne(userObj, function(err, result){
         if (err) throw err;
         res.send({
-          res: "Forms saved successfully!",
+          message: "Forms saved successfully!",
           exist:false,
           status: 200
       })
@@ -182,30 +184,26 @@ app.post('/formdata' , (req,res)=>{
     else if(result[0].email==userObj.email) {
       console.log(result[0].email)
       res.send({
-        res:{
+
           message:"Email Exists",
-          exist:true
-        } ,
+          exist:true,
         status: 200
     })
     }
     else if(result[0].phone==userObj.phone) {
       console.log(result[0].email)
       res.send({
-        res:{
+
           message:"Phone Number Exists",
-          exist:true
-        } ,
+          exist:true,
         status: 200
     })
     }
     else {
       console.log(result[0].email)
       res.send({
-        res:{
           message:"Data exists",
-          exist:true
-        } ,
+          exist:true,
         status: 200
     })
     }

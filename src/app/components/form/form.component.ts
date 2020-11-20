@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ChangeDetectorRef} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormServiceService } from 'src/app/services/form-service.service';
 import { SpinnerService } from 'src/app/services/spinner.service';
+import {ConfirmModalComponent} from '../confirm-modal/confirm-modal.component';
 
 @Component({
   selector: 'app-form',
@@ -12,8 +14,10 @@ export class FormComponent implements OnInit {
   inputForm:FormGroup;
   value:number;
   duplicateData;
-  message="";
+  message="Helloooo";
+  formSubmitted=false;
   uniqueData;
+  modalId="exampleModal"
   dropdownError=false;
   states = [ "Andhra Pradesh",
                 "Arunachal Pradesh",
@@ -51,8 +55,8 @@ export class FormComponent implements OnInit {
                 "Delhi",
                 "Lakshadweep",
                 "Puducherry"]
-  constructor(private formService:FormServiceService, private spinnerService:SpinnerService) { }
-
+  constructor(private confirmationDialogService:FormServiceService ,private detectChanges:ChangeDetectorRef, private modalService:NgbModal, private formService:FormServiceService, private spinnerService:SpinnerService) { }
+  closeResult='';
   ngOnInit(): void {
     this.inputForm= new FormGroup({
       'userData': new FormGroup({
@@ -74,22 +78,37 @@ export class FormComponent implements OnInit {
     this.spinnerService.showSpinner();
     this.formService.submitFormData(this.inputForm.value).subscribe(res=>{
       this.spinnerService.hideSpinner();
+      this.formSubmitted=true;
       console.log(res);
+      console.log(res['message'])
       if(res['message']=="Forms saved successfully!"){
+
+        console.log("here")
+        this.inputForm.reset();
+
+
         this.message="Hurray!! Data is submitted successfully. Redirecting you to the event..."
-        this.inputForm.reset('');
+        this.confirmModal(this.message);
       }
       else if(res['message']=="Email Exists"){
-        this.message="Entry is already submitted with the Email entered."
-
+        console.log("here")
+        this.message="Entry is already submitted with the Email entered.";
+        this.confirmModal(this.message);
       }
       else if(res['message']=="Phone Number Exists"){
-        this.message="Entry is already submitted with the Phone Number entered."
 
+
+
+        this.message="Entry is already submitted with the Phone Number entered.";
+        this.confirmModal(this.message);
       }
 
       else if(res['message']=="Data exists"){
-        this.message="Data already exists in the system."
+
+
+
+        this.message="Data already exists in the system.";
+        this.confirmModal(this.message);
 
       }
 
@@ -126,4 +145,23 @@ export class FormComponent implements OnInit {
     }
     this.dropdownError=false;
   }
+
+  // confirmModal(content){
+  //   this.modalService.open(content);
+  // }
+
+  confirmModal(messageC){
+
+
+
+    console.log(messageC)
+          this.confirmationDialogService.confirm('Form',messageC)
+          .then((confirmed) => console.log('User confirmed:', confirmed))
+          .catch(() => console.log('User dismissed the dialog (e.g., by using ESC, clicking the cross icon, or clicking outside the dialog)'));
+
+
+
+
+
+}
 }
