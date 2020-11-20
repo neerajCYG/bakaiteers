@@ -9,8 +9,8 @@ import { Subject } from 'rxjs';
 export class FormServiceService {
   messageEvent= new Subject<any>();
 
-  url= "http://localhost:3000/formdata";
- //  url= "http://147.139.37.217:3000/login";
+  //url= "http://localhost:3000/formdata";
+  url= "http://147.139.37.217:3000/formdata";
   constructor(private http:HttpClient,private modalService: NgbModal) { }
 
   submitFormData(userData){

@@ -25,9 +25,7 @@ export class SocialLoginComponent implements OnInit {
   ngOnInit() {
     this.authService.authState.subscribe(user => {
       this.user = user;
-
       this.loggedIn = (user != null);
-      this.loginService.isUserLogged(this.user);
     });
 
   }
